@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>智慧园区DEMO</title>
+
+
+  <meta name="theme-color" content="#ffffff"/>
+
+  <meta charset="utf-8">
+  <meta name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="./asset/reset.css">
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    #layer-prison {
+      height: 100%;
+    }
+
+    #layer-prison .gl, #layer-prison .labels {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    #range {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 1000;
+    }
+
+    /*标签样式*/
+    #layer-prison .labels .label {
+      position: absolute;
+      opacity: 0.8;
+      transform: scale(1, 1);
+    }
+
+    #layer-prison .labels .label .tag {
+      position: absolute;
+      bottom: 30px;
+      left: 28px;
+      font-size: 11px;
+      background-color: #000;
+      color: #fff;
+      padding: 4px 8px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 200ms ease-out;
+    }
+
+    #layer-prison .labels .label.over .tag, .line {
+      background: #640606;
+      border-color: #640606;
+    }
+
+    #layer-prison .labels .label .line {
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      bottom: 0;
+      left: 15px;
+      border-left: 2px solid black;
+      -moz-transform: skew(-40deg);
+      -webkit-transform: skew(-40deg);
+      transform: skew(-40deg);
+      background: transparent !important;
+    }
+
+
+    .highlight-model-menu{
+      height:240px;
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:200px;
+      margin:auto;
+      z-index: 100;
+    }
+    .highlight-model-menu-item{
+      width:200px;
+      height:40px;
+      line-height: 40px;
+      padding-left:30px;
+      font-size: 14px;
+      color:#fff;
+      background: rgba(0,0,0,.6);
+      cursor: pointer;
+    }
+    .highlight-model-menu-item.over{
+      background: rgba(100,6,6,.6);
+    }
+  </style>
+</head>
+
+<body data-section="explore">
+
+<input type="range" id="range">
+<div id="layer-prison">
+  <div class="gl"></div>
+  <div class="labels"></div>
+
+  <div class="highlight-model-menu"></div>
+</div>
+
+
+<script src="./asset/three.min.js"></script>
+<script src="./asset/OrbitControls.js"></script>
+
+<script src="./asset/modelData.js"></script>
+<script src="./asset/InteractiveItem.js"></script>
+<script src="./asset/model.js"></script>
+</body>
+
+</html>
